@@ -1,11 +1,7 @@
-# movie_project/urls.py
-
 from django.contrib import admin
-from django.urls import path
-from films import views
+from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.film_list, name='film_list'),
-    path('add/', views.add_film, name='add_film'),
+    path('', include('films.urls')),  # Включение маршрутов из приложения films
 ]

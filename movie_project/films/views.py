@@ -4,7 +4,7 @@ from .models import Film
 
 def film_list(request):
     films = Film.objects.all()
-    return render(request, 'films/film_list.html', {'films': films})
+    return render(request, 'film_list.html', {'films': films})
 
 def add_film(request):
     if request.method == "POST":
@@ -14,4 +14,4 @@ def add_film(request):
             return redirect('film_list')
     else:
         form = FilmForm()
-    return render(request, 'films/add_film.html', {'form': form})
+    return render(request, 'add_film.html', {'form': form})
